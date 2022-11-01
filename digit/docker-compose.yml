@@ -1,0 +1,133 @@
+version: "3"
+
+services:
+  redis_auth:
+      image: redis:5
+      volumes:
+        - /db/auth/data/redis:/data
+      deploy:
+        replicas: 1
+        restart_policy:
+          condition: any
+          delay: 5s
+          max_attempts: 0
+          window: 120s
+        placement:
+          constraints: [node.labels.databases==True]
+      logging:
+        driver: "json-file"
+        options:
+          max-size: "200k"
+          max-file: "10"
+      command: redis-server --appendonly yes
+      ports:
+        - '6379:6379'
+
+  redis_battle:
+      image: redis:5
+      volumes:
+        - /db/battle/data/redis:/data
+      deploy:
+        replicas: 1
+        restart_policy:
+          condition: any
+          delay: 5s
+          max_attempts: 0
+          window: 120s
+        placement:
+          constraints: [node.labels.databases==True]
+      logging:
+        driver: "json-file"
+        options:
+          max-size: "200k"
+          max-file: "10"
+      command: redis-server --appendonly yes
+      ports:
+        - '6378:6378'
+
+  auth_service:
+      build:
+        context: .
+        dockerfile: auth.Dockerfile
+      depends_on:
+        - redis_auth
+      links:
+        - redis_auth
+      env_file: ./docker-env/docker_auth.txt
+      user: root
+      ports:
+        - "5024:5000"
+      deploy:
+        replicas: 1
+        restart_policy:
+          condition: any
+          delay: 5s
+          max_attempts: 0
+          window: 120s
+        placement:
+          constraints: [node.labels.databases==True]
+      logging:
+        driver: "json-file"
+        options:
+          max-size: "200k"
+          max-file: "10"
+      entrypoint: /digit/scripts/run_auth_wsgi_server.sh
+
+  battle_service:
+      build:
+        context: .
+        dockerfile: battle.Dockerfile
+      depends_on:
+        - redis_battle
+        - auth_service
+      links:
+        - redis_battle
+        - auth_service
+      env_file: ./docker-env/docker_battle.txt
+      user: root
+      ports:
+        - "5100:5000"
+      deploy:
+        replicas: 1
+        restart_policy:
+          condition: any
+          delay: 5s
+          max_attempts: 0
+          window: 120s
+        placement:
+          constraints: [node.labels.databases==True]
+      logging:
+        driver: "json-file"
+        options:
+          max-size: "200k"
+          max-file: "10"
+      entrypoint: /digit/scripts/run_battle_wsgi_server.sh
+
+  battle_worker:
+      build:
+        context: .
+        dockerfile: worker.Dockerfile
+      depends_on:
+        - redis_battle
+        - auth_service
+        - battle_service
+      links:
+        - redis_battle
+        - auth_service
+        - battle_service
+      env_file: ./docker-env/docker_battle.txt
+      user: root
+      deploy:
+        replicas: 1
+        restart_policy:
+          condition: any
+          delay: 5s
+          max_attempts: 0
+          window: 120s
+        placement:
+          constraints: [node.labels.databases==True]
+      logging:
+        driver: "json-file"
+        options:
+          max-size: "200k"
+          max-file: "10"

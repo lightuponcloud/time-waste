@@ -1,0 +1,7 @@
+REDIS_URL=redis://redis_auth:6379/0
+LOG_LEVEL=DEBUG
+LOG_JSON=0
+LOG_MULTILINE=1
+DEBUG=1
+ENABLE_SWAGGER_APIDOC=1
+ADMIN_SECRET=IphJogitvedOaSwyujAwunbibcoovLillyawubTyiminnidEebbiecAgDapdacBenCanmydLumJecOct

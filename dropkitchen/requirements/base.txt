@@ -1,0 +1,6 @@
+Flask-SQLAlchemy
+flask
+flask-login
+flask-limiter
+blinker
+uWSGI

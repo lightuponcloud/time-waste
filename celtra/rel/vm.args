@@ -1,0 +1,6 @@
+-sname pubsub
+-setcookie pubsub
+
+-heart
+
+-mnesia dir '"../../mnesia"'

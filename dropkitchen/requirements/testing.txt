@@ -1,0 +1,12 @@
+# Additional Python package dependencies for the testing environment
+-r base.txt
+
+pylint-flask==0.5
+pytest-flask==0.10.0
+pytest-flake8
+pytest-cov
+# pytest-cov-report
+pytest-mccabe
+pytest-random
+mock
+rpdb

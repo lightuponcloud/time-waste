@@ -1,0 +1,20 @@
+{application, pubsub,
+ [{description, "Celtra test assignment"},
+  {vsn, "0.0.1"},
+  {registered, []},
+  {mod, {'pubsub_app', []}},
+  {registered, [events_server,pubsub_sup]},
+  {applications,
+   [kernel,
+    stdlib,
+    cowboy,
+    jsx,
+    mnesia
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {contributors, []},
+  {licenses, []},
+  {links, []}
+ ]}.
