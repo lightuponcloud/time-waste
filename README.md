@@ -22,3 +22,6 @@ Their response: "our requirements are very high". This is funny, as the script i
 * [To implement the UK post code validation library](.scurri) for scurri.com
 The task was to implement a production-ready library for UK post code validation.
 Of course a reasonable programmer would use one of many existing libraries.
+
+* [To implement a web application that allows users to store, at later retrieve, files](.propylon)
+1 full day was wasted. No reason of rejection was provided, as usual for time wasters.
