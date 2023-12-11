@@ -14,7 +14,7 @@ The application is working, but they have found "someone better", lol.
 
 * [Publisher/Subscriber service on Erlang](celtra) for Celtra
 It uses Cowboy web frwmework with mnesia db in order to receive and server messages using websockets.
-A different skill set needed.
+"A different skill set needed".
 
 * [Log parser](./tree/master/radarservices) for RadarServices.com
 Their response: "our requirements are very high". This is funny, as the script is just a log parser.
@@ -22,6 +22,3 @@ Their response: "our requirements are very high". This is funny, as the script i
 * [To implement the UK post code validation library](.scurri) for scurri.com
 The task was to implement a production-ready library for UK post code validation.
 Of course a reasonable programmer would use one of many existing libraries.
-
-* [To implement a web application that allows users to store, at later retrieve, files](.propylon)
-1 full day was wasted. No reason of rejection was provided, as usual for time wasters.
