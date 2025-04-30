@@ -1,14 +1,12 @@
-The Task
-========
+**The Task**
 > Design a web scraping solution using Playwright
 > Implement content processing with Trafilatura and embedding generation
 > Set up storage and retrieval using OpenSearch
 > Create cost optimization strategies
 
-I provided the following.
+**I provided the following.**
 
-CDK Project
-===========
+1. CDK Project
 A well-structured AWS CDK project defining infrastructure-as-code for a cloud-native web application. 
 CDK code showed a deployment pipeline with a development environment.
 
@@ -24,4 +22,4 @@ Core Architecture Components were:
 - S3 for file storage
 - Security Features ( Secret management for database credentials )
 
-Also I provided [sample web scraper script](assignment.py).
+2. Also I provided [sample web scraper script](assignment.py).
