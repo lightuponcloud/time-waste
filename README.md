@@ -38,3 +38,10 @@ It took about an hour and resonse was:
 It was a complete serverless architecture with API Gateway, containerized services on Fargate, OpenSearch for RAG capabilities, RDS storage, and robust security features.
 
 They did not care to respond after I provided code.
+
+
+[Document management web application assessment with a Django/Python backend and React frontend](propylon) for propylon.com
+
+I delivered required implementation with file upload and retrieval bash script. Server side used a custom FileModel that organizes files into a hierarchical directory structure based on FK IDs.
+
+No response since then.
