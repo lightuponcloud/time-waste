@@ -36,9 +36,9 @@ It took about an hour and resonse was:
 
 *My observations:*
 
-- Team don't care if you waste 3 hours; they won't talk to you before you invest 3 hours of your time.
-- They clearly "saw" something they were uncertain about, but they didn't want to risk wasting their time with me. Yet they had no issue with me spending 3 hours on their assignment.
-- It wasn't an AI assignment, but rather a general asyncio Python exercise. This was a typically misleading task, with the company claiming they didn't have anyone who could assess candidates' skills during a 15-minute phone call.
+1. Team don't care if you waste 3 hours; they won't talk to you before you invest 3 hours of your time.
+2. They clearly "saw" something they were uncertain about, but they didn't want to risk wasting their time with me. Yet they had no issue with me spending 3 hours on their assignment.
+3. It wasn't an AI assignment, but rather a general asyncio Python exercise. This was a typically misleading task, with the company claiming they didn't have anyone who could assess candidates' skills during a 15-minute phone call.
 
 * [AWS CDK infrastructure project enabling retrieval augmented generation for universities](impressitio) for impressit.io
 
