@@ -23,7 +23,7 @@ Their response: "our requirements are very high". This is funny, as the script i
 The task was to implement a production-ready library for UK post code validation.
 Of course a reasonable programmer would use one of many existing libraries.
 
-* [Real-time, asyncio-based conversational AI simulation between a coffee shop guest and employee.](hiauto)
+* [Real-time, asyncio-based conversational AI simulation between a coffee shop guest and employee.](hiauto) for hi.auto
 It took about an hour and resonse was:
 > After a check with the team, we decided not to proceed with your candidacy for this position.
 > They clearly saw from the recording that the assignment you uploaded after 5 minutes included the exact menu and prices listed in the instructions of our assignment.
@@ -33,3 +33,8 @@ It took about an hour and resonse was:
 - Team don't care if you waste 3 hours; they won't talk to you before you invest 3 hours of your time.
 - They clearly "saw" something they were uncertain about, but they didn't want to risk wasting their time with me. Yet they had no issue with me spending 3 hours on their assignment.
 - It wasn't an AI assignment, but rather a general asyncio Python exercise. This was a typically misleading task, with the company claiming they didn't have anyone who could assess candidates' skills during a 15-minute phone call.
+
+[AWS CDK infrastructure project enabling retrieval augmented generation for universities](impressitio) for impressit.io
+It was a complete serverless architecture with API Gateway, containerized services on Fargate, OpenSearch for RAG capabilities, RDS storage, and robust security features.
+
+They did not care to respond after I provided code.
