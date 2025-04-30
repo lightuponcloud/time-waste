@@ -5,12 +5,6 @@ These companies, with their assembly-line hiring, demand you bleed hours on task
 
 Dive into my saga of snubbed brilliance—clever solutions, savage rejections, and zero regrets. Time wasted: Countless hours. Lessons learned: Priceless.
 
-
-[![SWUbanner](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
-
-
-This repository contains test assignments I have wasted my time on.
-
 * [The game server using microservice architecture](digit) for Digit Game Studios.
 
 It took 9 hours to complete, but technical verdict was:
@@ -46,14 +40,14 @@ It took about an hour and resonse was:
 - They clearly "saw" something they were uncertain about, but they didn't want to risk wasting their time with me. Yet they had no issue with me spending 3 hours on their assignment.
 - It wasn't an AI assignment, but rather a general asyncio Python exercise. This was a typically misleading task, with the company claiming they didn't have anyone who could assess candidates' skills during a 15-minute phone call.
 
-[AWS CDK infrastructure project enabling retrieval augmented generation for universities](impressitio) for impressit.io
+* [AWS CDK infrastructure project enabling retrieval augmented generation for universities](impressitio) for impressit.io
 
 It was a complete serverless architecture with API Gateway, containerized services on Fargate, OpenSearch for RAG capabilities, RDS storage, and robust security features.
 
 They did not care to respond after I provided code.
 
 
-[Document management web application assessment with a Django/Python backend and React frontend](propylon) for propylon.com
+* [Document management web application assessment with a Django/Python backend and React frontend](propylon) for propylon.com
 
 I delivered required implementation with file upload and retrieval bash script. Server side used a custom FileModel that organizes files into a hierarchical directory structure based on FK IDs.
 
