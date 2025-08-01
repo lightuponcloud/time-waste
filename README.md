@@ -52,3 +52,13 @@ They did not care to respond after I provided code.
 I delivered required implementation with file upload and retrieval bash script. Server side used a custom FileModel that organizes files into a hierarchical directory structure based on FK IDs.
 
 No response since then.
+
+
+**StellarTech's Recruitment Farce: 3 Hours Flushed**
+Epic corporate nonsense. Here's how it went: HR intro, 1-hour technical interview, 40-minute Python test (100% coding score, naturally), and a 30-minute client technical chat. Then came the take-home test, which included a system design essay, architecture fix, and Python circuit simulation.
+
+After **two weeks** of silence (hiring manager was "partially unavailable"), they wrote that they **adored** my technical skills but rejected my candidacy due to a "communication style mismatch" — a laughable excuse, considering the reviews from people who actually met me:
+
+![Reviews](communication.png)
+
+This criticism comes from folks too incompetent to properly assess expertise in a 15-minute call, something I've successfully done with candidates before. Total time wasted: **3 hours**.
