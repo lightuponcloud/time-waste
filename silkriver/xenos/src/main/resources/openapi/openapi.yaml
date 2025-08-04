@@ -1,0 +1,282 @@
+openapi: 3.0.3
+info:
+  title: Tenants and Assets API
+  version: 1.0.0
+  description: API for managing tenants and assets
+
+servers:
+  - url: http://localhost:8080/api
+
+paths:
+
+  /tenants:
+    post:
+      summary: Create a new tenant
+      operationId: createTenant
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TenantCreateRequest'
+      responses:
+        '201':
+          description: Tenant created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tenant'
+        '409':
+          description: Conflict, e.g. tenant already exists
+    get:
+      summary: Get all tenants
+      operationId: getAllTenants
+      responses:
+        '200':
+          description: List of tenants
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tenant'
+
+  /tenants/{id}:
+    get:
+      summary: Get tenant by Id
+      operationId: getTenantById
+      parameters:
+        - name: id
+          in: path
+          description: Tenant ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Tenant found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tenant'
+        '404':
+          description: Tenant not found
+    put:
+      summary: Update tenant by ID
+      operationId: updateTenant
+      parameters:
+        - name: id
+          in: path
+          description: Tenant ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TenantCreateRequest'
+      responses:
+        '200':
+          description: Tenant updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tenant'
+        '404':
+          description: Tenant not found
+    delete:
+      summary: Delete tenant by ID
+      operationId: deleteTenant
+      parameters:
+        - name: id
+          in: path
+          description: Tenant ID
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '204':
+          description: Tenant deleted
+        '404':
+          description: Tenant not found
+
+  /organizations:
+    post:
+      summary: Create a new organization
+      operationId: createOrganization
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrganizationCreateRequest'
+      responses:
+        '201':
+          description: Organization created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Organization'
+        '409':
+          description: Conflict, e.g. organization already exists
+    get:
+      summary: Get all organizations
+      operationId: getAllOrganizations
+      responses:
+        '200':
+          description: List of organization
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Organization'
+
+  /assets:
+    post:
+      summary: Create a new asset
+      operationId: createAsset
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AssetCreateRequest'
+      responses:
+        '201':
+          description: Asset created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Asset'
+        '400':
+          description: Bad request
+    get:
+      summary: Get all assets
+      operationId: getAllAssets
+      responses:
+        '200':
+          description: List of assets
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Asset'
+
+
+  /assets/{orgCode}:
+    get:
+      summary: Fetch assets under orgCode
+      operationId: getAssets
+      parameters:
+        - name: orgCode
+          in: path
+          description: Code of Organization
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Fetch assets
+          content:
+            application/json:
+              schema:
+                type: string
+
+
+components:
+  schemas:
+
+    Tenant:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 1
+        name:
+          type: string
+        status:
+          $ref: '#/components/schemas/TenantStatus'
+      required:
+        - name
+
+    Organization:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 1
+        name:
+          type: string
+        tenant:
+          $ref: '#/components/schemas/Tenant'
+
+      required:
+        - name
+
+    TenantCreateRequest:
+      allOf:
+        - $ref: '#/components/schemas/Tenant'
+      required:
+        - name
+        - status
+        - orgCode
+
+    OrganizationCreateRequest:
+      allOf:
+        - $ref: '#/components/schemas/Organization'
+      required:
+        - name
+
+    Asset:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 1
+        name:
+          type: string
+        description:
+          type: string
+        orgCode:
+          type: string
+        tenant:
+          $ref: '#/components/schemas/Tenant'
+        parent:
+          $ref: '#/components/schemas/Asset'
+      required:
+        - name
+        - description
+        - orgCode
+
+    AssetCreateRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          example: East
+        description:
+          type: string
+        orgCode:
+          type: string
+      required:
+        - name
+        - description
+        - orgCode
+
+    TenantStatus:
+      type: string
+      description: Enum for tenant status
+      enum:
+        - INACTIVE
+        - ACTIVE
+      example: ACTIVE

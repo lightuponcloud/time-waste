@@ -62,3 +62,25 @@ After **two weeks** of silence (hiring manager was "partially unavailable"), the
 ![Reviews](communication.png)
 
 This criticism comes from folks too incompetent to properly assess expertise in a 15-minute call, something I've successfully done with candidates before. Total time wasted: **3 hours**.
+
+
+**Tombstone: SilkRiever’s Spring-Boot Sham**
+Time Wasted: 4 hours coding, 2 hours groveling
+
+SilkRiever, led by loyal time-wasting minions Amish and Claude, unleashed a multi-tenant Spring-Boot trial.
+
+One day before interview they wrote:
+``
+I wanted to share with you the pre-requisites for the session.  Please make sure you have the following requirements met:
+You will be developing a solution in Java, so you should have your preferred Java IDE at your disposal.
+You will need access to a postgres database that you can read/write to.
+``
+So I brought a prepped project to save their precious time: pom.xml with Hibernate, openapi-generator-maven-plugin, etc.
+
+During the interview, I adapted it like a coding ninja, but Amish and Claude whined that I didn’t build it from scratch
+in their unrealistic two-hour cage match. They nitpicked “debugging difficulties” and claimed they couldn’t assess
+my skills—despite watching me adapt the project from the start. These minions happily burned two hours
+I could’ve spent with family, proving they’d rather waste my time than have a quick chat to confirm I’m an expert in coding.
+
+SilkRiever’s Amish and Claude are black belts in wasting candidates’ time, dangling fake opportunities while dodging real conversations.
+I even prepared architecture diagram for [improving their messy system](./tree/master/silkriver) they complained about
