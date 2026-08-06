@@ -5,6 +5,9 @@ These companies, with their assembly-line hiring, demand you bleed hours on task
 
 Dive into my saga of snubbed brilliance—clever solutions, savage rejections, and zero regrets. Time wasted: Countless hours. Lessons learned: Priceless.
 
+* [EPAM Codility & interview farce](epam) for EPAM.
+  Recruiter with Ukrainian surname swore the three Codility tests were “specifically designed for the Azure role” (they weren’t). Spent a full hour, scored 100%. Role said Azure, team only does AWS. Shared screen to show real CDK work — fine. Shared screen again when ordered to demonstrate LLM use — suddenly “sensitive information”. Cheeky final interviewer tried to squeeze self-criticism, failed, then the rejection arrived. Time wasted: one hour of pure theatre + interviews. Claude was still the smartest person in the room.
+
 * [The game server using microservice architecture](digit) for Digit Game Studios.
 
 It took 9 hours to complete, but technical verdict was:
